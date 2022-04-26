@@ -13,6 +13,7 @@ public class Order implements IOrder
   private IItem _order;
   private OrderState _state;
   private LocalDateTime _time ;
+  private int clientID = 1;
 
   public Order(IItem pizza, OrderState state){
     this._order = pizza;
@@ -36,5 +37,11 @@ public class Order implements IOrder
 
   public void ChangeOrderStatus(OrderState state) {
     this._state = state;
+  }
+  public int setClientID(){
+    return clientID;
+  }
+  public int getClientID(){
+    return clientID++;
   }
 }

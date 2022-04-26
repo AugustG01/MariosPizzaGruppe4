@@ -11,4 +11,7 @@ public interface IOrder
   String getOrderTime();
   OrderState GetOrderStatus();
   void ChangeOrderStatus(OrderState state);
+
+  int getClientID();
+  int setClientID();
 }

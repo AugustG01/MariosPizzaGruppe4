@@ -60,10 +60,10 @@ public class OrderManager
   }
 
   public void viewQueueList(){
-    int clientID = 1;
+
     System.out.println(" ---QUEUE INFO--- ");
     for (IOrder item: _storeQueue.QueueOverview) {
-      System.out.println("Client ID: "+ clientID +" | Date&Time: "+item.getOrderTime()+ " | OrderName: "+item.getOrderItem()
+      System.out.println("Client ID: "+ item.getClientID() +" | Date&Time: "+item.getOrderTime()+ " | OrderName: "+item.getOrderItem()
                           +" | OrderStatus: " + item.GetOrderStatus());
     }
   }
