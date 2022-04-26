@@ -38,14 +38,16 @@ public class OrderManager {
   }
 
   public void viewOrder() {
+
+    for (int i = 0; i < ordreOversigt.size(); i++) {
+      System.out.println(ordreOversigt.get(i));
+
+    }
       if(answer ==99){
 
       }else {
           ordreOversigt.add(makeOrder());
       }
-    for (int i = 0; i < ordreOversigt.size(); i++) {
-      System.out.println(ordreOversigt.get(i));
-    }
     /*
     currentPizza = makeOrder().;
     System.out.println(" ---YOUR CHOICE--- ");
@@ -96,7 +98,7 @@ public class OrderManager {
   }*/
 
   public void deleteOrder() {
-    viewOrder();
+    //viewOrder();
     System.out.println("\nWhat order would you like to delete? ");
    // int input = sc.nextInt();
     answer = sc.nextInt();
@@ -105,7 +107,7 @@ public class OrderManager {
     for (int i = 0; i < ordreOversigt.size(); i++) {
       if (ordreOversigt.get(i).getClientID() == answer) {
         ordreOversigt.remove(ordreOversigt.get(i));
-          System.out.println("You deleted order: " + answer);
+          System.out.println("YOU DELETED ORDER!: " + answer+"\n");
           viewOrder();
       }
     }

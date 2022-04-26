@@ -44,7 +44,8 @@ public class Order
 
   @Override
   public String toString() {
-    return "\nTime:" + _time +
+    return "-------CURRENT ORDERS-------" +
+            "\nTime:" + _time +
             "\nOrder number: " + clientID + "\n" +orderedPizzas.toString().replace("[", "").replace("]","").replace(",", "\n" );
   }
 }
