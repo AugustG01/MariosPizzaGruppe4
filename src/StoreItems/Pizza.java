@@ -33,14 +33,10 @@ public class Pizza implements IItem
     return this.description;
   }
 
-  private NumberFormat ConvertToDanishCurrency(){
-    NumberFormat nf3 = NumberFormat.getInstance(new Locale("da", "DK"));
-    return nf3;
-  }
 
   // Overriding toString() method of String class
   @Override
   public String toString() {
-    return GetName() + " : " + GetDescription() + "..." + ConvertToDanishCurrency().format(GetCost());
+    return GetName() + " : " + GetDescription() + "..." + GetCost();
   }
 }

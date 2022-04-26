@@ -7,21 +7,20 @@ import StoreItems.Pizza;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
-public class Order implements IOrder
+public class Order
 {
-  private IItem _order;
   private LocalDateTime _time ;
-  private int clientID = 1;
+  private int clientID;
+  ArrayList<Pizza> orderedPizzas = new ArrayList<>();
 
-  public Order(IItem pizza){
-    this._order = pizza;
-    this._time = LocalDateTime.now();
+
+  public Order(LocalDateTime _time, int clientID) {
+    this._time = _time;
+    this.clientID = clientID;
   }
 
-  public IItem getOrderItem() {
-    return this._order;
-  }
 
   public String getOrderTime() {
     DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
@@ -31,10 +30,24 @@ public class Order implements IOrder
 
 
 
+  public ArrayList<Pizza> getOrderedPizzas() {
+    return orderedPizzas;
+  }
+
+  public void setOrderedPizzas(ArrayList<Pizza> orderedPizzas) {
+    this.orderedPizzas = orderedPizzas;
+  }
+
   public int setClientID(){
     return clientID;
   }
   public int getClientID(){
-    return clientID++;
+    return clientID;
+  }
+
+  @Override
+  public String toString() {
+    return "\nTime:" + _time +
+            "\nOrder number: " + clientID + "\n" +orderedPizzas.toString().replace("[", "").replace("]","").replace(",", "\n" );
   }
 }

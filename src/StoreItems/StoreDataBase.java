@@ -7,14 +7,9 @@ import java.util.List;
 
 public class StoreDataBase {
 
+    ArrayList<Pizza> tempMenu = new ArrayList<>();
 
-
-  public StoreDataBase() {
-      }
-
-    List<IItem> tempMenu = new ArrayList<IItem>();
-
-    public List<IItem> createMenu () {
+    public ArrayList<Pizza> createMenu () {
       tempMenu.add(new Pizza("Vesuvio", "tomatsauce, ost, skinke og oregano", 57));
       tempMenu.add(new Pizza("Amerikaner", "tomatsauce, ost, oksefars og oregano", 53));
       tempMenu.add(new Pizza("Cacciatore", "tomatsauce, ost, pepperoni og oregano", 57));
@@ -32,7 +27,6 @@ public class StoreDataBase {
 
       return tempMenu;
       }
-
 
   }
 

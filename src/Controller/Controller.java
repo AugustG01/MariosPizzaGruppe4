@@ -6,7 +6,7 @@ import StoreManager.OrderManager;
 public class Controller {
     public boolean gameOn = true;
 
-    OrderManager _management = new OrderManager();
+    OrderManager ordMan = new OrderManager();
     Menu _menu = new Menu();
 
     public void go(){
@@ -19,9 +19,9 @@ public class Controller {
 
             _menu.PrintMenu();
 
-            _management.viewOrder();
-            _management.addOrderToQueue();
-            _management.viewQueueList();
+            ordMan.viewOrder();
+           // ordMan.addOrderToQueue();
+           // ordMan.showOrders();
 
         }
     }

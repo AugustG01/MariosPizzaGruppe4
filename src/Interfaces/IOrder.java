@@ -11,5 +11,5 @@ public interface IOrder
 
 
   int getClientID();
-  int setClientID();
+  //int setClientID();
 }
