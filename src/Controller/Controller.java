@@ -9,17 +9,15 @@ public class Controller {
     OrderManager _management = new OrderManager();
     Menu _menu = new Menu();
 
-
-
     public void go(){
       gameOn();
     }
 
     public void gameOn(){
+        //skal laves som en switch
         while(gameOn == true){
 
             _menu.PrintMenu();
-
 
             _management.viewOrder();
             _management.addOrderToQueue();

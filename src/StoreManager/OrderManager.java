@@ -35,14 +35,13 @@ public class OrderManager {
   public void viewOrder() {
     currentPizza = makeOrder();
     System.out.println(" ---YOUR CHOICE--- ");
-    System.out.println("NAme: " + currentPizza.GetName() + '\n'
+    System.out.println("Name: " + currentPizza.GetName() + '\n'
             + "Description: " + currentPizza.GetDescription() + '\n'
             + "Price: " + currentPizza.GetCost());
     System.out.println();
-    clientOrder = new Order(currentPizza, OrderState.Ready);
+    clientOrder = new Order(currentPizza);
     System.out.println(" ---ORDER INFO--- ");
-    System.out.println("OrderInfo => " + clientOrder.getOrderItem() + "\nOrderStatus => " + clientOrder.GetOrderStatus()
-            + "\nOrder Date & Time => " + clientOrder.getOrderTime());
+    System.out.println("OrderInfo => " + clientOrder.getOrderItem() + "\nOrderStatus => " + "\nOrder Date & Time => " + clientOrder.getOrderTime());
     System.out.println();
   }
 
@@ -79,15 +78,15 @@ public class OrderManager {
     System.out.println("Thank you ! you have chosen nr: " + input + '\n');
 
     //Denne delete funktion virker ikke.
-    /*if (input == 99) {
+    if (input == 99) {
       System.out.println("Which order would you like to delete? ");
-      orderValue = sc.nextInt();
+      int orderValue = sc.nextInt();
       for (int i = 0; i < _storeQueue.QueueOverview.size(); i++) {
 
         if (orderValue == _storeQueue.QueueOverview.peek().getClientID())
           _storeQueue.QueueOverview.remove(_storeQueue.QueueOverview.peek().getClientID());
       }
-    }*/
+    }
     return input;
     }
 

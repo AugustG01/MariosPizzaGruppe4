@@ -11,13 +11,11 @@ import java.time.format.DateTimeFormatter;
 public class Order implements IOrder
 {
   private IItem _order;
-  private OrderState _state;
   private LocalDateTime _time ;
   private int clientID = 1;
 
-  public Order(IItem pizza, OrderState state){
+  public Order(IItem pizza){
     this._order = pizza;
-    this._state = state;
     this._time = LocalDateTime.now();
   }
 
@@ -31,13 +29,8 @@ public class Order implements IOrder
     return formattedDate;
   }
 
-  public OrderState GetOrderStatus() {
-    return this._state;
-  }
 
-  public void ChangeOrderStatus(OrderState state) {
-    this._state = state;
-  }
+
   public int setClientID(){
     return clientID;
   }
