@@ -1,9 +1,7 @@
 package StoreManager;
 
 import Interfaces.IItem;
-import Interfaces.IOrder;
 import StoreItems.Menu;
-import StoreItems.Pizza;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,7 +13,7 @@ public class OrderManager {
   // global variable for current chosen pizza
   IItem currentPizza;
   int clientOrder;
- private int clientID = 1;
+  private int clientID = 1;
   ArrayList<Order> ordreOversigt = new ArrayList();
 
   private Order makeOrder() {
@@ -24,26 +22,30 @@ public class OrderManager {
     int orderNr = chooseOrderNumber();
     IItem ChosenOrder = menu.menuKort.get(orderNr - 1);
     return ChosenOrder;*/
-    System.out.println("How many pizzaes??");
+    System.out.println("How many pizzas would you like? TYPE 99 TO DELETE");
     clientOrder = sc.nextInt();
-    //lav en metode der retunerer og scanner for bugs
     if (clientOrder == 99) {
-      deleteOrder();
-    }
-    sc.nextLine();
-    for (int i = 0; i < clientOrder; i++) {
-      System.out.println("What number??");
+        deleteOrder();
+    }else{
 
-      order.getOrderedPizzas().add(menu.menuKort.get(sc.nextInt()-1));
-      sc.nextLine();
+    for (int i = 0; i < clientOrder; i++) {
+        System.out.print("Which number? ");
+
+        order.getOrderedPizzas().add(menu.menuKort.get(sc.nextInt() - 1));
+        //ordreOversigt.add(makeOrder());
+        // sc.nextLine();
+    }
     }
 
     return order;
   }
 
   public void viewOrder() {
-    ordreOversigt.add(makeOrder());
+      if(clientOrder ==99){
 
+      }else {
+          ordreOversigt.add(makeOrder());
+      }
     for (int i = 0; i < ordreOversigt.size(); i++) {
       System.out.println(ordreOversigt.get(i));
     }
@@ -74,14 +76,14 @@ public class OrderManager {
   public void RemoveOrderFromQueue() {
     IOrder value = SelectClientOrder();
   }*/
-
+/*
   public void showOrders() {
     for (int i = 0; i < ordreOversigt.size(); i++){
       System.out.println(ordreOversigt.get(i));
     }
-  }
+  }*/
 
-
+/*
   public int chooseOrderNumber() {
     System.out.print("Hello, please choose a pizza by number: ");
 
@@ -94,17 +96,20 @@ public class OrderManager {
       deleteOrder();
     }
     return input;
-  }
+  }*/
 
   private void deleteOrder() {
     viewOrder();
-    System.out.println("What order would you like to delete? ");
-    int input = sc.nextInt();
-    sc.nextLine();
+    System.out.println("\nWhat order would you like to delete? ");
+   // int input = sc.nextInt();
+    clientOrder = sc.nextInt();
+   // sc.nextLine();
 
     for (int i = 0; i < ordreOversigt.size(); i++) {
-      if (ordreOversigt.get(i).getClientID() == input) {
+      if (ordreOversigt.get(i).getClientID() == clientOrder) {
         ordreOversigt.remove(ordreOversigt.get(i));
+          System.out.println("You deleted order: " + clientOrder);
+          viewOrder();
       }
     }
   }

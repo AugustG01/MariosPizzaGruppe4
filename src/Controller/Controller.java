@@ -7,7 +7,7 @@ public class Controller {
     public boolean gameOn = true;
 
     OrderManager ordMan = new OrderManager();
-    Menu _menu = new Menu();
+    Menu menu = new Menu();
 
     public void go(){
       gameOn();
@@ -17,11 +17,11 @@ public class Controller {
         //skal laves som en switch
         while(gameOn == true){
 
-            _menu.PrintMenu();
+            menu.PrintMenu();
 
             ordMan.viewOrder();
            // ordMan.addOrderToQueue();
-           // ordMan.showOrders();
+            //ordMan.showOrders();
 
         }
     }
