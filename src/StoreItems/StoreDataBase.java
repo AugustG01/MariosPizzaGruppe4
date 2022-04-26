@@ -1,9 +1,6 @@
 package StoreItems;
 
-import Interfaces.IItem;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class StoreDataBase {
 

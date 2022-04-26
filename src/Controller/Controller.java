@@ -5,7 +5,6 @@ import StoreManager.OrderManager;
 
 public class Controller {
     public boolean gameOn = true;
-
     OrderManager ordMan = new OrderManager();
     Menu menu = new Menu();
 
@@ -14,6 +13,7 @@ public class Controller {
     }
 
     public void gameOn(){
+        //menu.PrintMenu();
         //skal laves som en switch
         while(gameOn == true){
 
@@ -27,4 +27,3 @@ public class Controller {
     }
 
 }
-

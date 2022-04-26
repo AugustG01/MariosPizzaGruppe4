@@ -1,15 +1,11 @@
 package StoreItems;
 
-import Interfaces.IItem;
-
 import java.util.*;
 
 public class Menu {
   StoreDataBase _data = new StoreDataBase();
   public ArrayList<Pizza> menuKort = getMenuKort();
-  private Integer bestillingsNr = 0;
 
-  private String answer;
 
   //Scanner scan = new Scanner(System.in);
 
@@ -33,13 +29,9 @@ public class Menu {
 
     public void PrintMenu () {
       for (int i = 0; i < menuKort.size(); i++) {
-        System.out.println(i+1 + ". " +  menuKort.get(i) + " " + menuKort.get(i).GetCost());
+        System.out.println(i+1 + ". " +  menuKort.get(i) + " " + menuKort.get(i).getCost());
       }
-      System.out.println();
-
 
     }
-
-
 
 }

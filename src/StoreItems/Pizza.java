@@ -1,35 +1,35 @@
 package StoreItems;
-import Interfaces.*;
+
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.PrimitiveIterator;
 
-public class Pizza implements IItem
+public class Pizza
 {
   private String name;
   private String description;
-  private Integer Price;
+  private Integer price;
 
   public Pizza(String name, String description, Integer price)
   {
     this.name = name;
     this.description = description;
-    this.Price = price;
+    this.price = price;
   }
 
-  public int GetCost() {
-    return this.Price;
+  public int getCost() {
+    return this.price;
   }
 
 
-  public String GetName() {
+  public String getName() {
     return this.name;
   }
 
 
-  public String GetDescription() {
+  public String getDescription() {
     return this.description;
   }
 
@@ -37,6 +37,6 @@ public class Pizza implements IItem
   // Overriding toString() method of String class
   @Override
   public String toString() {
-    return GetName() + " : " + GetDescription() + "..." + GetCost();
+    return getName() + " : " + getDescription() + "...";
   }
 }

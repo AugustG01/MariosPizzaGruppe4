@@ -1,6 +1,5 @@
 package StoreManager;
 
-import Interfaces.IItem;
 import StoreItems.Menu;
 
 import java.time.LocalDateTime;
@@ -10,25 +9,23 @@ import java.util.Scanner;
 public class OrderManager {
   Scanner sc = new Scanner(System.in);
   Menu menu = new Menu();
-  // global variable for current chosen pizza
-  IItem currentPizza;
-  int clientOrder;
+  int answer;
   private int clientID = 1;
   ArrayList<Order> ordreOversigt = new ArrayList();
 
-  private Order makeOrder() {
+  public Order makeOrder() {
     Order order = new Order(LocalDateTime.now(),clientID++);
 /*    menu.getMenuKort();
     int orderNr = chooseOrderNumber();
     IItem ChosenOrder = menu.menuKort.get(orderNr - 1);
     return ChosenOrder;*/
     System.out.println("How many pizzas would you like? TYPE 99 TO DELETE");
-    clientOrder = sc.nextInt();
-    if (clientOrder == 99) {
+    answer = sc.nextInt();
+    if (answer == 99) {
         deleteOrder();
     }else{
 
-    for (int i = 0; i < clientOrder; i++) {
+    for (int i = 0; i < answer; i++) {
         System.out.print("Which number? ");
 
         order.getOrderedPizzas().add(menu.menuKort.get(sc.nextInt() - 1));
@@ -41,7 +38,7 @@ public class OrderManager {
   }
 
   public void viewOrder() {
-      if(clientOrder ==99){
+      if(answer ==99){
 
       }else {
           ordreOversigt.add(makeOrder());
@@ -98,17 +95,17 @@ public class OrderManager {
     return input;
   }*/
 
-  private void deleteOrder() {
+  public void deleteOrder() {
     viewOrder();
     System.out.println("\nWhat order would you like to delete? ");
    // int input = sc.nextInt();
-    clientOrder = sc.nextInt();
+    answer = sc.nextInt();
    // sc.nextLine();
 
     for (int i = 0; i < ordreOversigt.size(); i++) {
-      if (ordreOversigt.get(i).getClientID() == clientOrder) {
+      if (ordreOversigt.get(i).getClientID() == answer) {
         ordreOversigt.remove(ordreOversigt.get(i));
-          System.out.println("You deleted order: " + clientOrder);
+          System.out.println("You deleted order: " + answer);
           viewOrder();
       }
     }
