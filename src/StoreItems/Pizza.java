@@ -1,18 +1,12 @@
 package StoreItems;
 
-
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.PrimitiveIterator;
-
 public class Pizza
 {
   private String name;
   private String description;
-  private Integer price;
+  private int price;
 
-  public Pizza(String name, String description, Integer price)
+  public Pizza(String name, String description, int price)
   {
     this.name = name;
     this.description = description;
@@ -34,9 +28,8 @@ public class Pizza
   }
 
 
-  // Overriding toString() method of String class
   @Override
   public String toString() {
-    return getName() + " : " + getDescription() + "...";
+    return getName() + " : " + getDescription() + "..."+getCost();
   }
 }

@@ -20,10 +20,15 @@ public class Controller {
             menu.PrintMenu();
 
             ordMan.viewOrder();
-           // ordMan.addOrderToQueue();
-            //ordMan.showOrders();
-
         }
-    }
+    }/*
+    public void gameControls(){
+        while(gameOn == true){
+
+            menu.PrintMenu();
+
+            ordMan.viewOrder();
+        }
+    }*/
 
 }
